@@ -46,7 +46,7 @@ hence_histogram <- function(p_dados,
   df <- data.frame(x = p_dados)
   p <-
     ggplot2::ggplot(df, aes(x = x)) +
-    ggplot2::geom_histogram(binwidth = density(df$x)$bw,
+    ggplot2::geom_histogram(binwidth = stats::density(df$x)$bw,
                    fill = p_fill) +
     theme_hence() +
     ggplot2::xlab(p_xlab) +

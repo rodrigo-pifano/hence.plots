@@ -15,6 +15,6 @@ theme_hence <-
 
     ggplot2::theme_bw(base_size = p_base_size,
                       base_family = p_pase_family) +
-      ggplot2::theme(axis.line = element_line(colour = p_line_colour),
-                     panel.border = element_blank())
+      ggplot2::theme(axis.line = ggplot2::element_line(colour = p_line_colour),
+                     panel.border = ggplot2::element_blank())
   }

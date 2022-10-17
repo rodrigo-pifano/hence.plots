@@ -16,6 +16,7 @@ Imports:
     kableExtra,
     magrittr,
     purrr,
-    scales
+    scales,
+    stats
 URL: https://github.com/rodrigo-pifano/hence.plts
 BugReports: https://github.com/rodrigo-pifano/hence.plts/issues
