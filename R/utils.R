@@ -12,6 +12,6 @@ safe_null <- function() {
 
 aes <- ggplot2::aes()
 
-comma <- scales::comma()
+comma <- scales::comma
 
 `%>%` <- magrittr::`%>%`
