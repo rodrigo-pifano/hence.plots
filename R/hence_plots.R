@@ -53,7 +53,7 @@ hence_histogram <- function(p_dados,
     ggplot2::ylab(p_ylab)  +
     ggplot2::ggtitle(p_title,
             subtitle = p_subtitle) +
-    scales::scale_x_continuous(labels = comma)
+    ggplot2::scale_x_continuous(labels = comma)
   return(p)
 }
 
@@ -101,7 +101,7 @@ hence_line_chart <- function(p_dados,
   }
 
 
-  if (safe_null(p_color) %>% pluck("result")) {
+  if (safe_null(p_color) %>% purrr::pluck("result")) {
     linha <- ggplot2::geom_line(color = p_color_value)
     cores_grupos <- NULL
   } else {
@@ -123,7 +123,7 @@ hence_line_chart <- function(p_dados,
     ggplot2::ylab(ylabel)  +
     ggplot2::ggtitle(p_title,
             subtitle = p_subtitle) +
-    scales::scale_x_continuous(labels = comma) -> p
+    ggplot2::scale_x_continuous(labels = comma) -> p
   return(p)
 }
 

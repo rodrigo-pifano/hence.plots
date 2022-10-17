@@ -10,4 +10,8 @@ safe_null <- function() {
   purrr::safely(is.null,otherwise = FALSE)
 }
 
+aes <- ggplot2::aes()
 
+comma <- scales::comma()
+
+`%>%` <- magrittr::`%>%`
