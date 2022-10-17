@@ -1,4 +1,4 @@
-Package: hence.plts
+Package: hence.plots
 Title: Standard data visualization of Hence Analytics
 Version: 0.0.0.9000
 Authors@R: 
@@ -18,5 +18,5 @@ Imports:
     purrr,
     scales,
     stats
-URL: https://github.com/rodrigo-pifano/hence.plts
-BugReports: https://github.com/rodrigo-pifano/hence.plts/issues
+URL: https://github.com/rodrigo-pifano/hence.plots
+BugReports: https://github.com/rodrigo-pifano/hence.plots/issues

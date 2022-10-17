@@ -1,21 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# hence.plts
+# hence.plots
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of hence.plts is to …
+The goal of hence.plots is to …
 
 ## Installation
 
-You can install the development version of hence.plts from
+You can install the development version of hence.plots from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("rodrigo-pifano/hence.plts")
+devtools::install_github("rodrigo-pifano/hence.plots")
 ```
 
 ## Example
@@ -23,7 +23,7 @@ devtools::install_github("rodrigo-pifano/hence.plts")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(hence.plts)
+library(hence.plots)
 ## basic example code
 ```
 
