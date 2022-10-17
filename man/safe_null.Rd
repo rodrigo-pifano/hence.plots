@@ -4,7 +4,7 @@
 \alias{safe_null}
 \title{check whether an object is null, but returns FALSE if error occurs}
 \usage{
-safe_null()
+safe_null(x)
 }
 \description{
 check whether an object is null, but returns FALSE if error occurs
