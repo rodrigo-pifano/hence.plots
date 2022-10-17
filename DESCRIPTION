@@ -1,12 +1,19 @@
 Package: hence.plts
-Title: What the Package Does (One Line, Title Case)
+Title: Standard data visualization of Hence Analytics
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Rodrigo", "Pifano", , "rodrigo.pifano@hence-analytics.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: Provides easy to use plotting and table functions in the aesthetics standards of Hence Analytics.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
+Imports: 
+    dplyr,
+    ggplot2,
+    ggthemes,
+    kableExtra,
+    magrittr,
+    purrr,
+    scales

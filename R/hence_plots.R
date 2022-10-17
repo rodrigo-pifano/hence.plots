@@ -1,14 +1,4 @@
-library(magrittr)
-library(kableExtra)
-library(plotly)
-library(scales)
-library(dplyr)
-
-source("./R/utils.R")
-source("./R/theme_hence.R")
-# Table and plot functions -----------------------------------------------------
-
-#' Title: hence_table
+#' Build a beautiful looking table
 #'
 #' @param p_dados a data.frame or data.table
 #' @param p_align alignment of text inside table ("c" for center,"r" for right and "l" for left)
@@ -23,14 +13,17 @@ hence_table <- function(p_dados,
                         p_align = "c",
                         p_font_size = 18,
                         p_row_names = FALSE) {
-  tabela <- kbl(p_dados, align = p_align, row.names = p_row_names) %>%
-    kable_classic(lightable_options = "hover") %>%
-    kable_styling(font_size = p_font_size)
+  tabela <-
+    kableExtra::kbl(p_dados,
+                    align = p_align,
+                    row.names = p_row_names) %>%
+    kableExtra::kable_classic(lightable_options = "hover") %>%
+    kableExtra::kable_styling(font_size = p_font_size)
   return(tabela)
 }
 
 
-#' Title: hence_histogram
+#' Plot a histogram
 #'
 #' @param p_dados a numeric vector
 #' @param p_fill hex code to fill histogram bars
@@ -51,20 +44,21 @@ hence_histogram <- function(p_dados,
                             p_subtitle = ""){
 
   df <- data.frame(x = p_dados)
-  p <- ggplot(df, aes(x = x)) +
-    geom_histogram(binwidth = density(df$x)$bw,
+  p <-
+    ggplot2::ggplot(df, aes(x = x)) +
+    ggplot2::geom_histogram(binwidth = density(df$x)$bw,
                    fill = p_fill) +
     theme_hence() +
-    xlab(p_xlab) +
-    ylab(p_ylab)  +
-    ggtitle(p_title,
+    ggplot2::xlab(p_xlab) +
+    ggplot2::ylab(p_ylab)  +
+    ggplot2::ggtitle(p_title,
             subtitle = p_subtitle) +
-    scale_x_continuous(labels = comma)
+    scales::scale_x_continuous(labels = comma)
   return(p)
 }
 
 
-#' Title: hence_line_chart
+#' Plot line charts
 #'
 #' @param p_dados a data.table
 #' @param p_x varible to be displayed in x axis
@@ -108,16 +102,16 @@ hence_line_chart <- function(p_dados,
 
 
   if (safe_null(p_color) %>% pluck("result")) {
-    linha <- geom_line(color = p_color_value)
+    linha <- ggplot2::geom_line(color = p_color_value)
     cores_grupos <- NULL
   } else {
-    linha <- geom_line()
+    linha <- ggplot2::geom_line()
     cores_grupos <-
-      scale_color_manual(values = p_colors_values)
+      ggplot2::scale_color_manual(values = p_colors_values)
   }
 
   p_dados %>%
-    ggplot(aes(x = {{ p_x }},
+    ggplot2::ggplot(aes(x = {{ p_x }},
                y = {{ p_y }},
                color = {{ p_color }},
                group = {{ p_group }})
@@ -125,11 +119,11 @@ hence_line_chart <- function(p_dados,
     linha +
     cores_grupos +
     theme_hence() +
-    xlab(xlabel) +
-    ylab(ylabel)  +
-    ggtitle(p_title,
+    ggplot2::xlab(xlabel) +
+    ggplot2::ylab(ylabel)  +
+    ggplot2::ggtitle(p_title,
             subtitle = p_subtitle) +
-    scale_x_continuous(labels = comma) -> p
+    scales::scale_x_continuous(labels = comma) -> p
   return(p)
 }
 
