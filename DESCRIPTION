@@ -17,3 +17,5 @@ Imports:
     magrittr,
     purrr,
     scales
+URL: https://github.com/rodrigo-pifano/hence.plts
+BugReports: https://github.com/rodrigo-pifano/hence.plts/issues
