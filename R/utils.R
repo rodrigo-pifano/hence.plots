@@ -6,8 +6,8 @@
 #' @export
 #'
 #' @examples
-safe_null <- function() {
-  purrr::safely(is.null,otherwise = FALSE)
+safe_null <- function(x) {
+  purrr::safely(is.null(x), otherwise = FALSE)
 }
 
 aes <- ggplot2::aes
